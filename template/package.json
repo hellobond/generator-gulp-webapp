@@ -27,6 +27,7 @@
     "main-bower-files": "^2.5.0",
     "node-underscorify": "0.0.14",
     "opn": "^1.0.1",
+    "watchify": "^3.3.1",
     "wiredep": "^2.2.2"
   },
   "eslintConfig": {
