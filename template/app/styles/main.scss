@@ -1,0 +1,73 @@
+$icon-font-path: '../fonts/';
+
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+#nav-container {
+  .btn-group {
+    margin-top: 20px;
+  }
+}
+
+.navbar {
+
+  .navbar-brand {
+
+    .label {
+      font-size: 12px;
+      vertical-align: middle;
+    }
+  }
+}
+
+.jog {
+  text-align: center;
+  // margin: 0 auto;
+
+  .jog-x-y,
+  .jog-z {
+    display: inline-block;
+
+    .btn {
+      margin: 2px;
+      width: 46px;
+      display: inline-block;
+
+      .tl {
+        transform: rotate(45deg);
+      }
+
+      .tr {
+        transform: rotate(-45deg);
+      }
+
+      .bl {
+        transform: rotate(-45deg);
+      }
+
+      .br {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+
+#manual {
+  .panel {
+    &.disabled {
+      pointer-events: none;
+      opacity: .5;
+    }
+  }
+}
+
+#pen-position {
+  h5 {
+    margin: 0 0 20px 0;
+  }
+}
+
+#footer {
+  min-height: 200px;
+}
