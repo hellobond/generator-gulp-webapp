@@ -1,5 +1,3 @@
-var $ = require('jquery');
-var _ = require('lodash');
 var Backbone = require('backbone');
 var template = require("../templates/modal.html");
 
@@ -13,11 +11,12 @@ module.exports = Backbone.View.extend(
     initialize: function ()
     {
       // Empty the modal when closed
-      this.$el.on('hidden.bs.modal', _.bind(function ()
-      {
-        this.$el.find('.modal-body-footer-container').html();
-      },
-      this));
+      this.$el.on('hidden.bs.modal', this.handleModalHidden.bind(this));
+    },
+
+    handleModalHidden: function ()
+    {
+      this.$el.find('.modal-body-footer-container').html();
     },
 
     show: function ()

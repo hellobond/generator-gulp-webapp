@@ -2,7 +2,7 @@ var $ = require('jquery');
 var _ = require('lodash');
 var Backbone = require('backbone');
 var AppView = require('./views/App');
-var AppRouter = require('./routes/App').sharedInstance();
+var AppRouter = require('./routes/App');
 
 Backbone.$ = $;
 

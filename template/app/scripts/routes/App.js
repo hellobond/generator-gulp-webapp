@@ -1,49 +1,42 @@
-var $ = require('jquery');
-var _ = require('lodash');
+'use strict';
+
 var Backbone = require('backbone');
 
-var _instance = null;
+var AppRouter = Backbone.Router.extend(
+{
 
-module.exports = {
+  view: null,
 
-  sharedInstance: function ()
+  routes:
   {
-    if (!_instance)
+    '': 'home',
+    'home': 'home',
+    'about': 'about'
+  },
+
+  setView: function (view)
+  {
+    if (view != this.view)
     {
-      var AppRouter = Backbone.Router.extend(
-      {
-        view: null,
-        routes:
-        {
-          '': 'home',
-          'home': 'home',
-          'about': 'about'
-        },
-
-        setView: function (view)
-        {
-          if (view != this.view)
-          {
-            this.view = view;
-          }
-        },
-
-        home: function ()
-        {
-          if (this.view)
-            this.view.setState('homeState');
-        },
-
-        about: function ()
-        {
-          if (this.view)
-            this.view.setState('aboutState');
-        }
-      });
-
-      _instance = new AppRouter();
+      this.view = view;
     }
+  },
 
-    return _instance;
+  home: function ()
+  {
+    if (this.view)
+    {
+      this.view.setState('homeState');
+    }
+  },
+
+  about: function ()
+  {
+    if (this.view)
+    {
+      this.view.setState('aboutState');
+    }
   }
-}
+});
+
+module.exports = new AppRouter();
